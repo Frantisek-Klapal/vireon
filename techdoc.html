@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Vireon Technical Documentation" />
+  <meta name="keywords" content="Vireon, REN, WordCells, ActionCells, Semantic Intelligence, Documentation" />
+  <meta name="author" content="VIREON Technologies" />
+  <title>Vireon Technical Documentation</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #1d1f2f;
+      color: #e6e6e6;
+      line-height: 1.7;
+    }
+    header {
+      background: #151625;
+      padding: 2rem;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2.4rem;
+      color: #00ffe7;
+      margin: 0;
+    }
+    nav {
+      background: #282a3a;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav a {
+      color: #00ffe7;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    section {
+      padding: 2rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+    .section-title {
+      font-size: 1.6rem;
+      color: #00ffe7;
+      margin-bottom: 1rem;
+    }
+    footer {
+      background: #111;
+      text-align: center;
+      padding: 1rem;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>VIREON – Technical Documentation</h1>
+  </header>
+
+  <nav>
+    <a href="#bootcell">BootCell</a>
+    <a href="#wordcells">WordCells</a>
+    <a href="#actioncells">ActionCells</a>
+    <a href="#sentencechains">SentenceChains</a>
+    <a href="#rencore">REN Core</a>
+    <a href="#validation">Validation & Safety</a>
+  </nav>
+
+  <section id="bootcell">
+    <div class="section-title">BootCell</div>
+    <p>The BootCell is the seed of the Vireon system. When the system receives its first input, the BootCell splits and transforms into either a WordCell or an ActionCell based on input type. This unique cell contains all REN core logic and rules, and after the three primary cell types are created, BootCell disables its own replication logic.</p>
+  </section>
+
+  <section id="wordcells">
+    <div class="section-title">WordCells</div>
+    <p>WordCells are self-contained structures representing individual words, symbols, or numbers. Each WordCell includes parameters such as lexical definition, domain tags, language forms, ID, synonyms, and all connections to related WordCells and ActionCells. Their internal logic allows quick access to all semantically relevant information.</p>
+  </section>
+
+  <section id="actioncells">
+    <div class="section-title">ActionCells</div>
+    <p>ActionCells contain grammar rules and validation routines. They serve as firewalls, ensuring all inputs are filtered and secure before entering memory. They are connected to both WordCells and SentenceChains and play a crucial role in the external I/O process via OE_Files. ActionCells evolve by learning rules and patterns per domain.</p>
+  </section>
+
+  <section id="sentencechains">
+    <div class="section-title">SentenceChains</div>
+    <p>SentenceChains represent validated Subject-Verb-Object sequences. These are combinations of WordCells and ActionCells linked into logical, contextual structures. SentenceChains track learning weights, evolution logs, emotional valence, and domain classification, enabling long-term memory and semantic inference.</p>
+  </section>
+
+  <section id="rencore">
+    <div class="section-title">REN Core Engine</div>
+    <p>The RunningtimeOrganicNetwork (REN) handles all logic generation, cell instantiation, and semantic routing. It includes the Semantic Engine, Execution Shell, Memory Spine, and Cell Mapper. REN also houses the Global Search Bus, a broadcast system allowing live querying across all connected cells.</p>
+  </section>
+
+  <section id="validation">
+    <div class="section-title">Validation & Safety</div>
+    <p>Vireon’s safety is managed through distributed validation. ActionCells serve as rule-checkers and content firewalls. All inputs pass through ActionCells before affecting any core logic. Additionally, no cell can self-replicate unless validated, and all learning is versioned. OE_Files manage external data output and access controls.</p>
+  </section>
+
+  <footer>
+    &copy; 2025 VIREON Technologies – Confidential & Protected
+  </footer>
+</body>
+</html>

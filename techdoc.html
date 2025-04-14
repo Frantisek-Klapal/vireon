@@ -74,12 +74,12 @@
 
   <section id="bootcell">
     <div class="section-title">BootCell</div>
-    <p>The BootCell is the seed of the Vireon system. When the system receives its first input, the BootCell splits and transforms into either a WordCell or an ActionCell based on input type. This unique cell contains all REN core logic and rules, and after the three primary cell types are created, BootCell disables its own replication logic.</p>
+    <p>The BootCell is the seed of the Vireon system. When the system receives its first input, the BootCell crates first WordCell and will exists until the last structural Cell is missing and then transforms itself into it. This unique cell contains all REN core logic and rules, and after its transformation into last missing cell the BootCell disables its own replication logic and keeping the system rules of the adequate type of cell.</p>
   </section>
 
   <section id="wordcells">
     <div class="section-title">WordCells</div>
-    <p>WordCells are self-contained structures representing individual words, symbols, or numbers. Each WordCell includes parameters such as lexical definition, domain tags, language forms, ID, synonyms, and all connections to related WordCells and ActionCells. Their internal logic allows quick access to all semantically relevant information.</p>
+    <p>WordCells are self-contained structures representing individual words, symbols, or numbers. Each WordCell includes parameters such as lexical definition, domain tags, language forms, ID, synonyms, and all connections to related WordCells and ActionCells and SentenceChains. Their internal logic allows quick access to all semantically relevant information.</p>
   </section>
 
   <section id="actioncells">

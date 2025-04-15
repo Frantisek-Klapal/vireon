@@ -135,7 +135,7 @@
     <p>&copy; 2025 VIREON Technologies – All rights reserved</p>
     <p>USPTO - 63/786,329 Provisional Patent USA</p>       
     <a href="https://www.freecounterstat.com" title="free web counter"><img src="https://counter2.optistats.ovh/private/freecounterstat.php?c=2ggk7s2q2b9w4ql6l1r4at68wy2g5gj6" border="0" title="free web counter" alt="free web counter"></a>
-
+    <?php  $file='counter.txt';  $read=file_get_contents($file);  $open=fopen($file,'w');  $read++;  $write=fwrite($open, $read);  fclose($open);  echo 'Number of visitors: '.$read;?>
 
   </footer>
 </body>

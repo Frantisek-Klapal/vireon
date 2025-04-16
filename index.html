@@ -148,12 +148,15 @@
     <p>&copy; 2025 VIREON Technologies – All rights reserved</p>
     <p>USPTO - 63/786,329 Provisional Patent USA</p>      
     <script>
-     fetch("https://raw.githubusercontent.com/Frantisek-Klapal/vireon/main/visitor-data/counter.json")
-    .then(res => res.json())
-    .then(data => {
-    document.getElementById("visit-counter").textContent = data.visits;
+      fetch("https://raw.githubusercontent.com/Frantisek-Klapal/vireon/main/visitor-data/counter.json")
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById("visit-counter").textContent = data.visits;
+      })
+      .catch(() => {
+      document.getElementById("visit-counter").textContent = "Unavailable";
     });
-    </script>
+</script>
     <div style="text-align:center;">
   Total Visits: <span id="visit-counter">Loading...</span>
   </div>

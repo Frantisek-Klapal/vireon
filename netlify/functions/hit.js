@@ -14,6 +14,7 @@ export default async function handler(req, res) {
   if (response.ok) {
     res.status(200).send("Triggered visitor_ping");
   } else {
-    res.status(response.status).send("GitHub dispatch failed");
+    const error = await response.text();
+    res.status(response.status).send(`GitHub dispatch failed: ${error}`);
   }
 }

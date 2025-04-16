@@ -12,16 +12,9 @@
   gtag('config', 'G-XQCNTFPY65');
 </script>
   <script>
-fetch("https://api.github.com/repos/Frantisek-Klapal/vireon/dispatches", {
-  method: "POST",
-  headers: {
-    "Authorization": "token secret.GH_PAT",
-    "Accept": "application/vnd.github.v3+json"
-  },
-  body: JSON.stringify({
-    event_type: "visitor_ping"
-  })
-});
+fetch("/.netlify/functions/hit")
+  .then(() => console.log("Visit counted."))
+  .catch(err => console.warn("Visit NOT counted:", err));
 </script>
 
   <meta charset="UTF-8" />

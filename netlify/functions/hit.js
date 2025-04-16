@@ -1,3 +1,6 @@
+console.log("GITHUB_PAT:", token ? "Exists" : "Missing");
+console.log("Dispatch response status:", response.status);
+
 export default async function handler(req, res) {
   const token = process.env.GITHUB_PAT;
   const repo = "Frantisek-Klapal/vireon";

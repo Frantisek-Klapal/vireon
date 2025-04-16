@@ -11,6 +11,18 @@
 
   gtag('config', 'G-XQCNTFPY65');
 </script>
+  <script>
+fetch("https://api.github.com/repos/Frantisek-Klapal/vireon.live/dispatches", {
+  method: "POST",
+  headers: {
+    "Authorization": "token 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",
+    "Accept": "application/vnd.github.v3+json"
+  },
+  body: JSON.stringify({
+    event_type: "visitor_ping"
+  })
+});
+</script>
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -130,6 +142,15 @@
     Feel free to add your thoughts and ideas—we're listening.</p>
     <p>Email us at: <a href="mailto:feri.klapal@gmail.com">feri.klapal@gmail.com</a></p>
   </section>
+  <script>
+fetch("https://raw.githubusercontent.com/Frantisek-Klapal/vireon.live/main/visitor-data/counter.json")
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById("visit-counter").textContent = data.visits;
+  });
+</script>
+
+
 
   <footer>
     <p>&copy; 2025 VIREON Technologies – All rights reserved</p>
@@ -138,6 +159,9 @@
       <a href="https://www.freecounterstat.com" title="free web counter">
         <img src="https://counter2.optistats.ovh/private/freecounterstat.php?c=8gtrurbg2dxuk36kcwerlh5fggsf9e6q" border="0" title="free web counter" style="max-width:100%; height:auto;"></a>    
     </div>
+    <div style="text-align:center;">
+  Total Visits: <span id="visit-counter">Loading...</span>
+  </div>
   </footer>
 </body>
 </html>

@@ -11,10 +11,12 @@
 
   gtag('config', 'G-XQCNTFPY65');
 </script>
-  <script>
-fetch("/.netlify/functions/hit")
-  .then(() => console.log("Visit counted."))
-  .catch(err => console.warn("Visit NOT counted:", err));
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    fetch("/.netlify/functions/hit")
+      .then(() => console.log("Visit counted."))
+      .catch(err => console.warn("Visitor not counted:", err));
+  });
 </script>
 
   <meta charset="UTF-8" />
@@ -136,7 +138,11 @@ fetch("/.netlify/functions/hit")
     <p>Email us at: <a href="mailto:feri.klapal@gmail.com">feri.klapal@gmail.com</a></p>
   </section>
   <script>
-    fetch("/.netlify/functions/hit").catch(err => console.warn("Visitor not counted:", err));
+    window.addEventListener("DOMContentLoaded", () => {
+      fetch("/.netlify/functions/hit")
+        .then(() => console.log("Visit counted."))
+        .catch(err => console.warn("Visitor not counted:", err));
+      });
   </script>
     <footer>
     <p>&copy; 2025 VIREON Technologies – All rights reserved</p>

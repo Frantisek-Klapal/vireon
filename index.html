@@ -16,7 +16,7 @@ fetch("https://api.github.com/repos/Frantisek-Klapal/vireon/dispatches", {
   method: "POST",
   headers: {
     "Authorization": "token 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",
-    "Accept": "application/vnd.github.v3+json"
+    "Accept": "application/vnd.github.v2+json"
   },
   body: JSON.stringify({
     event_type: "visitor_ping"
@@ -150,12 +150,12 @@ fetch("https://api.github.com/repos/Frantisek-Klapal/vireon/dispatches", {
         <img src="https://counter2.optistats.ovh/private/freecounterstat.php?c=8gtrurbg2dxuk36kcwerlh5fggsf9e6q" border="0" title="free web counter" style="max-width:100%; height:auto;"></a>    
     </div>
     <script>
-   fetch("https://raw.githubusercontent.com/Frantisek-Klapal/vireon/main/visitor-data/counter.json")
-  .then(res => res.json())
-  .then(data => {
+     fetch("https://raw.githubusercontent.com/Frantisek-Klapal/vireon/visitor-data/counter.json")
+    .then(res => res.json())
+    .then(data => {
     document.getElementById("visit-counter").textContent = data.visits;
-  });
-</script>
+    });
+    </script>
     <div style="text-align:center;">
   Total Visits: <span id="visit-counter">Loading...</span>
   </div>

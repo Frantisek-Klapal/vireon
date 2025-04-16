@@ -20,11 +20,10 @@ jobs:
           count=$(jq '.visits' $file)
           echo "{\"visits\": $((count + 1))}" > $file
 
-      - name: Commit and Push
+      - name: Commit and Force Push Counter
         run: |
           git config --global user.name 'GitHub Action'
           git config --global user.email 'action@github.com'
-          git pull origin main --rebase
           git add visitor-data/counter.json
-          git commit -m "Visitor count incremented"
-          git push origin main
+          git commit -m "Visitor count incremented" || echo "Nothing to commit"
+          git push https://x-access-token:${{ secrets.GH_PAT }}@github.com/Frantisek-Klapal/vireon.git HEAD:main

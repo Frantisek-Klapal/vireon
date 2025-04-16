@@ -142,6 +142,9 @@ fetch("https://api.github.com/repos/Frantisek-Klapal/vireon/dispatches", {
     Feel free to add your thoughts and ideas—we're listening.</p>
     <p>Email us at: <a href="mailto:feri.klapal@gmail.com">feri.klapal@gmail.com</a></p>
   </section>
+  <script>
+    fetch("/.netlify/functions/hit").catch(err => console.warn("Visitor not counted:", err));
+  </script>
     <footer>
     <p>&copy; 2025 VIREON Technologies – All rights reserved</p>
     <p>USPTO - 63/786,329 Provisional Patent USA</p>      

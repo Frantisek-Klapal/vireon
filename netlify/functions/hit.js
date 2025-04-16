@@ -11,5 +11,9 @@ export default async function handler(req, res) {
     body: JSON.stringify({ event_type: "visitor_ping" }),
   });
 
-  res.status(response.ok ? 200 : 500).end("Triggered");
+  if (response.ok) {
+    res.status(200).send("Triggered visitor_ping");
+  } else {
+    res.status(response.status).send("GitHub dispatch failed");
+  }
 }

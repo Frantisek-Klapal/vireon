@@ -16,7 +16,7 @@ jobs:
         run: |
           file="visitor-data/counter.json"
           count=$(jq '.visits' $file)
-          echo "{\"visits\": $(( count + 1))}" > $file
+          echo "{\"visits\": $((count + 1))}" > $file
 
       - name: Commit and Push
         run: |

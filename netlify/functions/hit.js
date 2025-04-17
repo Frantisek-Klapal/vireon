@@ -13,7 +13,7 @@ export default async function handler(req, res) {
   const response = await fetch(`https://api.github.com/repos/${repo}/dispatches`, {
     method: "POST",
     headers: {
-      Authorization: `${token}`,
+      Authorization: `token ${token}`,
       Accept: "application/vnd.github.v3+json",
     },
     body: JSON.stringify({ event_type: "visitor_ping" }),

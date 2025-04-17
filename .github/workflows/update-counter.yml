@@ -35,4 +35,4 @@ jobs:
         run: |
           git add visitor-data/counter.json
           git commit -m "Visitor count incremented" || echo "Nothing to commit"
-          git push https://x-access-token:${GITHUB_TOKEN}@github.com/Frantisek-Klapal/vireon.git HEAD:main
+          git push -f https://x-access-token:${GITHUB_TOKEN}@github.com/Frantisek-Klapal/vireon.git HEAD:main

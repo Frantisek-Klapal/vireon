@@ -22,6 +22,7 @@ jobs:
 
       - name: Commit and Force Push Counter
         run: |
+          git pull --rebase origin main
           git config --global user.name 'GitHub Action'
           git config --global user.email 'action@github.com'
           git add visitor-data/counter.json

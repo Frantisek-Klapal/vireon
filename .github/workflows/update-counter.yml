@@ -21,7 +21,8 @@ jobs:
           git config --global user.email 'action@github.com'
 
       - name: Pull latest changes from remote
-        run: git pull origin main
+        run: |
+          git pull origin main
 
       - name: Read + Increment Visitor Count
         run: |

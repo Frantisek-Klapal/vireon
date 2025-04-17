@@ -22,7 +22,7 @@ jobs:
 
       - name: Pull latest changes from remote
         run: |
-          git pull origin main
+          git pull --rebase origin main
 
       - name: Read + Increment Visitor Count
         run: |

@@ -8,23 +8,31 @@ on:
 jobs:
   increment:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
+      - name: Checkout full repo
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0  # Required for git pull or rebase to work
+          fetch-depth: 0  # Needed for full Git history
+
+      - name: Configure Git
+        run: |
+          git config --global user.name 'GitHub Action'
+          git config --global user.email 'action@github.com'
+
+      - name: Pull latest changes from remote
+        run: git pull --rebase origin main
 
       - name: Read + Increment Visitor Count
         run: |
           file="visitor-data/counter.json"
-          count=$(jq '.visits' $file)
-          echo "{\"visits\": $((count + 1))}" > $file
+          count=$(jq '.visits' "$file")
+          echo "{\"visits\": $((count + 1))}" > "$file"
 
-      - name: Commit and Force Push Counter
+      - name: Commit and Push Counter Update
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
         run: |
-          git pull --rebase origin main
-          git config --global user.name 'GitHub Action'
-          git config --global user.email 'action@github.com'
           git add visitor-data/counter.json
           git commit -m "Visitor count incremented" || echo "Nothing to commit"
-          git push https://x-access-token:${{ secrets.GH_PAT }}@github.com/Frantisek-Klapal/vireon.git HEAD:main
+          git push https://x-access-token:${GITHUB_TOKEN}@github.com/Frantisek-Klapal/vireon.git HEAD:main
